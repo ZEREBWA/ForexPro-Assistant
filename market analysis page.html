@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Market Analysis | YourForexAssistance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+
+
+    <!-- Hero Section -->
+    <div id="sidebar" class="sidebar bg-gray-800 text-white w-64 fixed h-full z-50">
+              <div class="p-4 flex items-center space-x-3 border-b border-gray-700">
+                  <div class="bg-forexGold w-10 h-10 rounded-full flex items-center justify-center">
+                      <span class="font-bold text-gray-800" id="user-initials">PZ</span>
+                  </div>
+                  <div>
+                      <p class="font-medium" id="user-name">Panashe Zirebwa</p>
+                      <p class="text-xs text-gray-400" id="user-email">panashezirebwa@gmail.com</p>
+                  </div>
+              </div>
+
+              <nav class="p-4">
+                  <ul class="space-y-2">
+                      <li>
+                          <a href="forex pro server bay.html" class="flex items-center space-x-3 p-2 rounded-lg bg-gray-700 text-white">
+                              <i class="fas fa-tachometer-alt w-6 text-center"></i>
+                              <span>Dashboard</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="market analysis page.html" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-chart-line w-6 text-center"></i>
+                              <span>Market Analysis</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-robot w-6 text-center"></i>
+                              <span>AI Signals</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-calculator w-6 text-center"></i>
+                              <span>Risk Tools</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-calendar-alt w-6 text-center"></i>
+                              <span>Economic Calendar</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-book w-6 text-center"></i>
+                              <span>Strategy Library</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white">
+                              <i class="fas fa-cog w-6 text-center"></i>
+                              <span>Settings</span>
+                          </a>
+                      </li>
+                  </ul>
+
+                  <div class="mt-8 pt-4 border-t border-gray-700">
+                      <button id="logout-button" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white w-full">
+                          <i class="fas fa-sign-out-alt w-6 text-center"></i>
+                          <span>Log Out</span>
+                      </button>
+                  </div>
+              </nav>
+          </div>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-6">
+        <!-- Market Overview -->
+        <header>
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Market Overview</h2>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 bg-forexBlue text-white rounded-md text-sm">Today</button>
+                    <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm">Week</button>
+                    <button class="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm">Month</button>
+                </div>
+            </div>
+          </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Major Pairs -->
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all hover:transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">Major Pairs</h3>
+                        <span class="text-sm text-gray-500">Updated: <span class="live-time">10:15 GMT</span></span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-down text-red-500"></i>
+                                </span>
+                                <span class="font-medium">EUR/USD</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold price-display">1.0854</div>
+                                <div class="text-sm text-red-500 change-display">-0.12%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-up text-green-500"></i>
+                                </span>
+                                <span class="font-medium">GBP/USD</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold price-display">1.2538</div>
+                                <div class="text-sm text-green-500 change-display">+0.25%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-down text-red-500"></i>
+                                </span>
+                                <span class="font-medium">USD/JPY</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold price-display">151.42</div>
+                                <div class="text-sm text-red-500 change-display">-0.08%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commodities -->
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">Commodities</h3>
+                        <span class="text-sm text-gray-500">Updated: 10:15 GMT</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-up text-green-500"></i>
+                                </span>
+                                <span class="font-medium">Gold</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">$2,185.40</div>
+                                <div class="text-sm text-green-500">+0.45%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-down text-red-500"></i>
+                                </span>
+                                <span class="font-medium">Silver</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">$24.32</div>
+                                <div class="text-sm text-red-500">-0.32%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-up text-green-500"></i>
+                                </span>
+                                <span class="font-medium">Oil (WTI)</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">$81.75</div>
+                                <div class="text-sm text-green-500">+1.12%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indices -->
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">Indices</h3>
+                        <span class="text-sm text-gray-500">Updated: 10:15 GMT</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-up text-green-500"></i>
+                                </span>
+                                <span class="font-medium">S&P 500</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">5,254.35</div>
+                                <div class="text-sm text-green-500">+0.32%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-down text-red-500"></i>
+                                </span>
+                                <span class="font-medium">DAX</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">18,235.10</div>
+                                <div class="text-sm text-red-500">-0.15%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-arrow-up text-green-500"></i>
+                                </span>
+                                <span class="font-medium">Nikkei 225</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">40,888.00</div>
+                                <div class="text-sm text-green-500">+0.50%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Analysis Section -->
+        <section class="mb-12">
+            <div class="flex flex-wrap justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Technical Analysis</h2>
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <select class="appearance-none bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 focus:ring-2 focus:ring-forexBlue">
+                            <option>EUR/USD</option>
+                            <option>GBP/USD</option>
+                            <option>USD/JPY</option>
+                            <option>AUD/USD</option>
+                            <option>USD/CAD</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </div>
+                    </div>
+                    <div class="flex border rounded-md overflow-hidden">
+                        <button class="px-3 py-1 bg-forexBlue text-white border-r">1H</button>
+                        <button class="px-3 py-1 bg-white text-gray-600 border-r">4H</button>
+                        <button class="px-3 py-1 bg-white text-gray-600 border-r">1D</button>
+                        <button class="px-3 py-1 bg-white text-gray-600">1W</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <div class="h-80">
+                    <canvas id="forexChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-4">Key Levels</h3>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="text-sm text-gray-600 mb-1">Resistance</div>
+                            <div class="font-bold text-forexBlue">1.0925</div>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <div class="text-sm text-gray-600 mb-1">Pivot</div>
+                            <div class="font-bold text-purple-600">1.0850</div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <div class="text-sm text-gray-600 mb-1">Support</div>
+                            <div class="font-bold text-forexRed">1.0785</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-4">Technical Indicators</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">RSI (14)</span>
+                                <span class="font-medium">52.5</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-forexGold h-2 rounded-full" style="width: 52.5%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">MACD</span>
+                                <span class="font-medium">+0.0012</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">Stochastic</span>
+                                <span class="font-medium">48.7</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 48.7%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">ADX</span>
+                                <span class="font-medium">34.3</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-forexGreen h-2 rounded-full" style="width: 34.3%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Calendar -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Economic Calendar</h2>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-600">Timezone:</span>
+                    <select class="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm">
+                        <option>GMT</option>
+                        <option>EST</option>
+                        <option>CET</option>
+                        <option>JST</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="flex border-b">
+                    <button class="px-4 py-3 font-medium text-gray-600 tab-active">Today</button>
+                    <button class="px-4 py-3 font-medium text-gray-600">Tomorrow</button>
+                    <button class="px-4 py-3 font-medium text-gray-600">This Week</button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Currency</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actual</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Forecast</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Previous</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">08:30</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">GBP</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Retail Sales m/m</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.4%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.2%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-0.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Medium</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">10:00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">EUR</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">German Ifo Business Climate</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">89.4</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">88.9</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">88.6</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Low</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">13:30</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USD</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Core Durable Goods Orders m/m</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">High</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">15:00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USD</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Pending Home Sales m/m</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-4.9%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Medium</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Sentiment -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Market Sentiment</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">EUR/USD</h3>
+                        <span class="text-sm px-2 py-1 rounded-full bg-blue-100 text-blue-800">Neutral</span>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                        <span class="text-sm text-gray-600">Buy</span>
+                        <span class="text-sm text-gray-600">48%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 48%"></div>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-sm text-gray-600">Sell</span>
+                        <span class="text-sm text-gray-600">52%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 52%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">GBP/USD</h3>
+                        <span class="text-sm px-2 py-1 rounded-full bg-green-100 text-green-800">Bullish</span>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                        <span class="text-sm text-gray-600">Buy</span>
+                        <span class="text-sm text-gray-600">63%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 63%"></div>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-sm text-gray-600">Sell</span>
+                        <span class="text-sm text-gray-600">37%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 37%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800">USD/JPY</h3>
+                        <span class="text-sm px-2 py-1 rounded-full bg-red-100 text-red-800">Bearish</span>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                        <span class="text-sm text-gray-600">Buy</span>
+                        <span class="text-sm text-gray-600">35%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 35%"></div>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-sm text-gray-600">Sell</span>
+                        <span class="text-sm text-gray-600">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Insights -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Expert Insights</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Analyst" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Michael Johnson</h3>
+                            <p class="text-sm text-gray-600">Senior Forex Analyst</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The EUR/USD pair is currently testing key support at 1.0685. A break below this level could open the door for further downside towards 1.0620. However, with RSI approaching oversold territory, we might see a short-term bounce first."</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>2 hours ago</span>
+                        <div class="flex space-x-2">
+                            <button class="text-blue-500 hover:text-blue-700"><i class="far fa-thumbs-up"></i> 24</button>
+                            <button class="text-gray-500 hover:text-gray-700"><i class="far fa-comment"></i> 5</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 transition-all card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Analyst" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Sarah Williams</h3>
+                            <p class="text-sm text-gray-600">Chief Market Strategist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"GBP/USD continues to show resilience despite broader USD strength. The pair has formed a bullish flag pattern on the 4H chart, suggesting potential for a breakout towards 1.2650 if it can hold above the 1.2500 psychological support."</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>4 hours ago</span>
+                        <div class="flex space-x-2">
+                            <button class="text-blue-500 hover:text-blue-700"><i class="far fa-thumbs-up"></i> 18</button>
+                            <button class="text-gray-500 hover:text-gray-700"><i class="far fa-comment"></i> 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated with Market Insights</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto">Subscribe to our daily forex analysis newsletter and get the latest market updates delivered to your inbox.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-r-lg font-medium transition-all">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">YourForexAssistance</h3>
+                    <p class="text-gray-400">Providing professional forex market analysis and trading insights since 2015.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Market Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Trading Signals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Education</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Economic Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Forex Calculator</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Currency Converter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-gray-400">support@yourforexassistance.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 YourForexAssistance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Chart
+        const ctx = document.getElementById('forexChart').getContext('2d');
+        const forexChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'EUR/USD',
+                    data: [1.0780, 1.0755, 1.0720, 1.0735, 1.0710, 1.0695, 1.0725],
+                    borderColor: '#1E3A8A',
+                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        // Update time display
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'UTC',
+                timeZoneName: 'short'
+            });
+            document.querySelectorAll('.live-time').forEach(el => {
+                el.textContent = timeString;
+            });
+        }
+
+        // Simulate live price updates
+        function updatePrices() {
+            const priceElements = document.querySelectorAll('.price-display');
+            const changeElements = document.querySelectorAll('.change-display');
+
+            priceElements.forEach((el, index) => {
+                const currentPrice = parseFloat(el.textContent);
+                const change = (Math.random() - 0.5) * 0.0015;
+                const newPrice = currentPrice + change;
+                const percentChange = (change / currentPrice * 100).toFixed(2);
+
+                el.textContent = newPrice.toFixed(4);
+
+                if (changeElements[index]) {
+                    if (change > 0) {
+                        changeElements[index].textContent = `+${percentChange}%`;
+                        changeElements[index].classList.remove('text-red-500');
+                        changeElements[index].classList.add('text-green-500');
+                    } else {
+                        changeElements[index].textContent = `${percentChange}%`;
+                        changeElements[index].classList.remove('text-green-500');
+                        changeElements[index].classList.add('text-red-500');
+                    }
+                }
+            });
+        }
+
+        // Initialize
+        updateTime();
+        updatePrices();
+
+        // Update every 3 seconds
+        setInterval(updateTime, 3000);
+        setInterval(updatePrices, 3000);
+    </script>
+</body>
+</html>
